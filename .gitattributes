@@ -1,0 +1,11 @@
+# Force GitHub to detect the main language correctly
+*.java linguist-detectable=true
+*.gradle linguist-detectable=true
+*.xml linguist-detectable=true
+
+# Ignore non-code or generated files from language stats
+*.py linguist-detectable=false
+*.md linguist-detectable=false
+*.txt linguist-detectable=false
+*.json linguist-detectable=false
+*.yml linguist-detectable=false
