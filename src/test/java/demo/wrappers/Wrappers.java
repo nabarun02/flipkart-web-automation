@@ -31,7 +31,7 @@ public class Wrappers {
     }
 
     // method for navigating to the flipkart site
-    public void navigateToForm(){
+    public void navigateToSite(){
 
         if(!driver.getCurrentUrl().equals(siteUrl)){
             
@@ -121,10 +121,10 @@ public class Wrappers {
             //traversing all the dicounts
             for(WebElement discountEl : discountEls){
 
-                String discountValue = discountEl.getText().trim().replaceAll("^0-9",""); //removing the extra characters from the text
+                String discountValue = discountEl.getText().trim().replaceAll("[^0-9]",""); //removing the extra characters from the text
                 int discountValueInt = Integer.parseInt(discountValue);
 
-                if(discountValueInt > 17){
+                if(discountValueInt > discount){
 
                     titleEl = discountEl.findElement(By.xpath("./ancestor::div[contains(@class, 'yKfJKb')]//div[contains(@class, 'KzDlHZ')]"));
                     titleText = titleEl.getText().trim();
